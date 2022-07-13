@@ -20,19 +20,3 @@ export const getFlightlist = async () => {
     return Promise.reject(e);
   }
 };
-
-export const getAirport = async (id) => {
-  try {
-    const resurl = `https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_API_URL}/airports/${id}`;
-    const reqOptions = {
-      url: resurl,
-      method: "GET",
-      headers: headersList,
-      withCredentials: false,
-    };
-    const res = await axios.request(reqOptions);
-    return Promise.resolve(res.data);
-  } catch (e) {
-    return Promise.reject(e);
-  }
-};

@@ -1,26 +1,10 @@
 import { useSelector } from "react-redux";
 import { testSelector } from "../../store/reducers/aeroapi";
 import { useParams } from "react-router-dom";
-import { getAirport } from "../../services/getdata";
 
 export default function Detail() {
   const { ident } = useParams();
   const { flightlist } = useSelector(testSelector);
-
-  const getAirportdata = (airport_code, airport_info_url) => {
-    console.log(airport_info_url, airport_code);
-    if (!airport_info_url || !airport_code) {
-      return "No information";
-    }
-    getAirport(airport_code)
-      .then(function (response) {
-        const result = response.name;
-        return result;
-      })
-      .catch(function () {
-        return "No information";
-      });
-  };
 
   return (
     <>
@@ -94,28 +78,6 @@ export default function Detail() {
                   {content.predicted_on
                     ? content.predicted_on
                     : "No Information"}
-                </dd>
-              </div>
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">
-                  Origin airport
-                </dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {getAirportdata(
-                    content.origin.code,
-                    content.origin.airport_info_url
-                  )}
-                </dd>
-              </div>
-              <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-sm font-medium text-gray-500">
-                  Destination airport
-                </dt>
-                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                  {getAirportdata(
-                    content.destination?.code,
-                    content.destination?.airport_info_url
-                  )}
                 </dd>
               </div>
             </dl>
