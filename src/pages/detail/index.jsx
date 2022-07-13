@@ -8,19 +8,18 @@ export default function Detail() {
   const { flightlist } = useSelector(testSelector);
 
   const getAirportdata = (airport_code, airport_info_url) => {
-    if (airport_info_url === null || airport_code === null) {
+    console.log(airport_info_url, airport_code);
+    if (!airport_info_url || !airport_code) {
       return "No information";
     }
-    if (airport_code !== null) {
-      getAirport(airport_code)
-        .then(function (response) {
-          const result = response.name + response.type;
-          return result;
-        })
-        .catch(function () {
-          return "No information";
-        });
-    }
+    getAirport(airport_code)
+      .then(function (response) {
+        const result = response.name;
+        return result;
+      })
+      .catch(function () {
+        return "No information";
+      });
   };
 
   return (

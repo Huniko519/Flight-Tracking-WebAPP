@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { getFlightlist } from "./services/getdata";
 import { useDispatch } from "react-redux";
 import { setFlightlists } from "./store/reducers/aeroapi";
-import Navbar from "./component/Navbar";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const dispatch = useDispatch();
