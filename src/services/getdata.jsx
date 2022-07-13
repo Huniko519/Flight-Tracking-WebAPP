@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const headersList = {
-  "Accept": "application/json; charset=UTF-8",
+  Accept: "application/json; charset=UTF-8",
   "x-apikey": process.env.REACT_APP_API_KEY,
-}
+};
 
 export const getFlightlist = async () => {
   try {
@@ -13,7 +13,7 @@ export const getFlightlist = async () => {
       method: "GET",
       headers: headersList,
       withCredentials: false,
-    }
+    };
     const res = await axios.request(reqOptions);
     return Promise.resolve(res.data);
   } catch (e) {
@@ -29,7 +29,7 @@ export const getAirport = async (id) => {
       method: "GET",
       headers: headersList,
       withCredentials: false,
-    }
+    };
     const res = await axios.request(reqOptions);
     return Promise.resolve(res.data);
   } catch (e) {
