@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   flightlist: "",
-  searchident: ""
+  searchident: "",
 };
 
 // Slice
@@ -15,7 +15,7 @@ const aeroapiSlice = createSlice({
     },
     setSearchident: (state, { payload }) => {
       state.searchident = payload;
-    }
+    },
   },
 });
 
@@ -26,7 +26,4 @@ export default aeroapiSlice.reducer;
 export const testSelector = (state) => state.aeroapi;
 
 // Actions
-export const {
-  setFlightlists,
-  setSearchident
-} = aeroapiSlice.actions;
+export const { setFlightlists, setSearchident } = aeroapiSlice.actions;

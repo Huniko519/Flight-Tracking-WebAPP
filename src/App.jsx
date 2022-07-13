@@ -3,20 +3,21 @@ import Main from "./pages/main";
 import Detail from "./pages/detail";
 import { useEffect } from "react";
 import { getFlightlist } from "./services/getdata";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { setFlightlists } from "./store/reducers/aeroapi";
 import Navbar from "./component/Navbar";
 
 export default function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    getFlightlist().then(function (response) {
-      console.log(response);
-      return dispatch(setFlightlists(response));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    getFlightlist()
+      .then(function (response) {
+        console.log(response);
+        return dispatch(setFlightlists(response));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }, []);
 
   return (
