@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid'
 
 export default function FlightList({data}) {
   return (
