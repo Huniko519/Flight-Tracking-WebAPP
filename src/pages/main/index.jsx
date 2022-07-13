@@ -1,11 +1,9 @@
-// import { Link } from "react-router-dom";
-import Navbar from "../../component/navbar";
+import Flight from "../../component/Flight";
+
 export default function Main() {
   return (
     <>
-        <div className="container overflow-hidden mx-auto">
-            <Navbar />
-        </div>
+      <Flight />
     </>
   );
 }
