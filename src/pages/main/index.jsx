@@ -1,4 +1,4 @@
-import Flight from "../../component/Flight";
+import Flight from "../../components/Flight";
 
 export default function Main() {
   return (
