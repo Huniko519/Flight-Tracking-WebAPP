@@ -1,4 +1,4 @@
-- Flight Tracking App 
+Flight Tracking App 
 With the world starting to open up slowly, many have turned their attention to traveling again. To help with this influx of flights, users need an application to store upcoming flights (whether their own or friends and family) so they can track both the schedule and the flight itself. Your job is to build an interface that fills this need and provides whatever attributes you think are useful.
 
 - Requirements
