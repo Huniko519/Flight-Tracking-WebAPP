@@ -17,10 +17,12 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "prettier"
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
     "react/prop-types": 0
   }
 }
