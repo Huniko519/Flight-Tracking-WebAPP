@@ -1,57 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  categories: "",
-  bussinessmodel: "",
-  trl: "",
-  description: "",
-  logo: "",
-  mainColor: "",
-  hasUserSection: "",
+  flightlist: "",
+  searchident: ""
 };
 
 // Slice
-const innoloftSlice = createSlice({
+const aeroapiSlice = createSlice({
   name: "aeroapi",
   initialState,
   reducers: {
-    setCategroies: (state, { payload }) => {
-      state.categories = payload;
+    setFlightlists: (state, { payload }) => {
+      state.flightlist = payload;
     },
-    setBussinessmodel: (state, { payload }) => {
-      state.bussinessmodel = payload;
-    },
-    setTrl: (state, { payload }) => {
-      state.trl = payload;
-    },
-    setDescription: (state, { payload }) => {
-      state.description = payload;
-    },
-    setLogo: (state, { payload }) => {
-      state.logo = payload;
-    },
-    setMainColor: (state, { payload }) => {
-      state.mainColor = payload;
-    },
-    setHasUserSection: (state, { payload }) => {
-      state.hasUserSection = payload;
-    },
+    setSearchident: (state, { payload }) => {
+      state.searchident = payload;
+    }
   },
 });
 
 // Reducers
-export default innoloftSlice.reducer;
+export default aeroapiSlice.reducer;
 
 // Selectors
-export const testSelector = (state) => state.innoloft;
+export const testSelector = (state) => state.aeroapi;
 
 // Actions
 export const {
-  setCategroies,
-  setBussinessmodel,
-  setTrl,
-  setDescription,
-  setLogo,
-  setMainColor,
-  setHasUserSection,
-} = innoloftSlice.actions;
+  setFlightlists,
+  setSearchident
+} = aeroapiSlice.actions;
