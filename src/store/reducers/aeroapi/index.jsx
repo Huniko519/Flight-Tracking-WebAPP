@@ -5,7 +5,6 @@ const initialState = {
   searchident: "",
 };
 
-// Slice
 const aeroapiSlice = createSlice({
   name: "aeroapi",
   initialState,
@@ -19,11 +18,6 @@ const aeroapiSlice = createSlice({
   },
 });
 
-// Reducers
 export default aeroapiSlice.reducer;
-
-// Selectors
 export const testSelector = (state) => state.aeroapi;
-
-// Actions
 export const { setFlightlists, setSearchident } = aeroapiSlice.actions;
