@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-
 import rootReducer from "./reducers";
 
 const createNoopStorage = () => {
@@ -17,16 +16,19 @@ const createNoopStorage = () => {
     },
   };
 };
+
 const storage =
   typeof window !== "undefined"
     ? createWebStorage("local")
     : createNoopStorage();
+
 const persistConfig = {
   key: "root",
   version: 1,
   storage,
   whitelist: ["aeroapi"],
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = configureStore({
   reducer: persistedReducer,
@@ -35,4 +37,5 @@ const store = configureStore({
       serializableCheck: false,
     }),
 });
+
 export default store;
